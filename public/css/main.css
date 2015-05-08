@@ -1,0 +1,63 @@
+body {
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+#canvas {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+}
+.checkbox label {
+	margin-right:10px;
+}
+form {
+	margin-bottom:0px;
+}
+.btn-play, .btn-settings, .btn-spectate {
+	display:block;
+	height:35px;
+}
+.btn-play {
+	width:85%;
+	float:left;
+}
+.btn-settings {
+	width:13%;
+	float:right;
+}
+.btn-spectate {
+	display:block;
+	float:right;
+}
+#adsBottom {
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:2;
+}
+#adsBottomInner {
+	margin:0px auto;
+	width:728px;
+	height:90px;
+	border:5px solid white;
+	border-radius:5px 5px 0px 0px;
+	background-color:#FFFFFF;box-sizing:content-box;
+}
+.region-message {
+	display:none;
+	margin-bottom:12px;
+	margin-left:6px;
+	margin-right:6px;
+	text-align:center;
+}
+@media screen and (max-height: 800px) {
+	#adsBottom {
+		display:none;
+	}
+}

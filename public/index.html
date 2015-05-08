@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>Agar.io SmartUI</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+	<div id="overlays" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 2;">
+		<div id="helloDialog" style="width: 350px; background-color: #FFFFFF; margin: 100px auto; border-radius: 15px; padding: 5px 15px 5px 15px;">
+			<form role="form">
+				<div class="form-group">
+					<h2><center>Hello</center></h2>
+				</div>
+				<div class="form-group">
+					<p>Type your nick or leave it empty:</p>
+					<input id="nick" class="form-control" placeholder="Nick" maxlength="14"/>
+				</div>
+				<div class="form-group">
+					<select id="region" class="form-control" required>
+						<option selected disabled value=""> -- Select a Region -- </option>
+						<option value="US-Fremont">US West</option>
+						<option value="US-Atlanta">US East</option>
+						<option value="BR-Brazil">South America</option>
+						<option value="EU-London">Europe</option>
+						<option value="RU-Russia">Russia</option>
+						<option value="JP-Tokyo">East Asia</option>
+						<option value="CN-China">China</option>
+						<option value="SG-Singapore">Oceania</option>
+					</select>
+				</div>
+				<div>
+					<div class="text-muted region-message CN-China">
+					 
+					</div>
+				</div>
+				<div class="form-group">
+					<button disabled type="submit" id="playBtn" onclick="setNick(document.getElementById('nick').value); return false;" class="btn btn-play btn-primary btn-needs-server">Play</button>
+					<button onclick="$('#settings').toggle(); return false;" class="btn btn-info btn-settings"><i class="glyphicon glyphicon-cog"></i></button>
+					<br clear="both"/>
+				</div>
+				<div id="settings" class="checkbox" style="display:none;">
+				 
+				<center>
+					<label><input type="checkbox" onchange="setSkins(!$(this).is(':checked'));"> No skins</label>
+					<label><input type="checkbox" onchange="setNames(!$(this).is(':checked'));"> No names</label>
+					<label><input type="checkbox" onchange="setDarkTheme($(this).is(':checked'));"> Dark Theme</label>
+					<label><input type="checkbox" onchange="setColors($(this).is(':checked'));"> No colors</label>
+					<label><input type="checkbox" onchange="setShowMass($(this).is(':checked'));"> Show mass</label>
+				</center>
+				</div>
+			</form>
+			<hr/>
+			<center>
+				<span class="text-muted">
+					Move your mouse to control your cell.<br/>
+					Press <b>Space</b> to split.<br/>
+					Press <b>W</b> to eject some mass<br/>
+				</span>
+			</center>
+			<hr/>
+		</div>
+	</div>
+	<div id="connecting" style="display:none;position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 1; background-color: rgba(0,0,0,0.5);">
+	<div style="width: 350px; background-color: #FFFFFF; margin: 100px auto; border-radius: 15px; padding: 5px 15px 5px 15px;">
+		<h2>Connecting</h2>
+		<p> If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.
+	</div>
+	</div>
+	<canvas id="canvas" width="800" height="600"></canvas>
+	<script src="js/quadtree.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/main.js"></script>
+	</body>
+</html>

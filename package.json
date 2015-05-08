@@ -1,0 +1,12 @@
+{
+	"name": "AgarSmartUI",
+	"description": "Agar SmartUI Server",
+	"version": "0.0.1",
+	"license": "MIT",
+	"readme": "../README.md",
+	"repository": "https://github.com/peinguin/AgarSmartUI.git",
+	"dependencies": {
+		"http-proxy": "^1.11.1",
+		"express": "^4.12.3"
+	}
+}
